@@ -4,18 +4,38 @@
 <view class='person'>
   <!-- header -->
   <view class='header'>
-    <image class='user-avatar' src='/images/test/user.jpg' mode='aspectFill'></image>
+    <image class='user-avatar' src='/images/test/user.jpg'></image>
     <view class='user-nickname'>{{userInfo ? userInfo.nickName : '请登录'}}</view>
   </view>
   <view class='col-list'>
     <view class='col-list-item'>
-			<image src='/images/person/ticket.png'></image>
-			<view class='col-list-item-title'>我的票</view>
-			<image src='/images/index/right.png'></image>
+      <image src='/images/person/ticket.png' class='col-list-item-icon'></image>
+      <text class='col-list-item-title'>我的票</text>
+      <image src='/images/index/right.png' class='col-list-item-anchor'></image>
+    </view>
+    <view class='line'></view>
+    <view class='col-list-item'>
+      <image src='/images/person/order.png' class='col-list-item-icon'></image>
+      <text class='col-list-item-title'>我的订单</text>
+      <image src='/images/index/right.png' class='col-list-item-anchor'></image>
+    </view>
+    <view class='line'></view>
+    <view class='col-list-item'>
+      <image src='/images/person/collection.png' class='col-list-item-icon'></image>
+      <text class='col-list-item-title'>我的收藏</text>
+      <image src='/images/index/right.png' class='col-list-item-anchor'></image>
+    </view>
+    <view class='line'></view>
+    <view class='col-list-item'>
+      <image src='/images/person/people.png' class='col-list-item-icon'></image>
+      <text class='col-list-item-title'>购票人</text>
+      <image src='/images/index/right.png' class='col-list-item-anchor'></image>
     </view>
 		<view class='line'></view>
     <view class='col-list-item'>
-
+      <image src='/images/person/about.png' class='col-list-item-icon'></image>
+      <text class='col-list-item-title'>关于产品</text>
+      <image src='/images/index/right.png' class='col-list-item-anchor'></image>
     </view>
   </view>
 </view>

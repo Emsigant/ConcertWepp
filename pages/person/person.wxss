@@ -26,23 +26,32 @@
 .col-list-item {
 	display: flex;
 	width: 100%;
-	padding: 0 1rem;
+	padding: 0 2rem;
 	align-items: center;
 	box-sizing: border-box;
 }
-.col-list-item>image {
+.col-list-item:active {
+	background: #eee;
+}
+.col-list-item-icon {
 	width: 2rem;
 	height: 2rem;
-	flex: none;
 }
 .col-list-item-title {
 	line-height: 3.6rem;
 	flex: 1;
 	margin-left: .5rem;
 }
+.col-list-item-anchor {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+
 .line {
 	height: 1rpx;
-	background: #aaa;
-	margin: 0 1rem;
-	transform: scaleY(.5);
+	background: #ccc;
+	margin: 0 2rem;
+	transform: scaleY(0.5);
+  transform-origin:0 0;
 }

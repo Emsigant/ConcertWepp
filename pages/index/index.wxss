@@ -79,6 +79,12 @@
   position: relative;
   margin-right: 1rem;
 }
+.col-2-item:active {
+	opacity: .7;
+}
+.col-3-item:active {
+	opacity: .7;
+}
 
 .col-2-item:last-child {
   margin-right: 0;
@@ -151,6 +157,9 @@
 }
 
 .col-3-grid-item {
+}
+.col-3-grid-item:active {
+	opacity: .7;
 }
 
 .col-3-grid-item>image {
