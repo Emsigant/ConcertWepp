@@ -1,10 +1,11 @@
 //app.js
+const log = console.log;
 App({
   onLaunch: function () {
 		// wx.getLocation({
 		// 	success: function(res) {
 		// 		console.log(res)
-		// 	},
+		// 	}
 		// })
     // // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []

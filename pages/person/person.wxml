@@ -1,2 +1,4 @@
 <!--pages/person/person.wxml-->
-<text>pages/person/person.wxml</text>
+<view>{{userInfo ? userInfo.nickName : '请登录'}}</view>
+
+
