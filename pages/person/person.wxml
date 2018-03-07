@@ -31,7 +31,7 @@
       <text class='col-list-item-title'>购票人</text>
       <image src='/images/index/right.png' class='col-list-item-anchor'></image>
     </view>
-		<view class='line'></view>
+    <view class='line'></view>
     <view class='col-list-item'>
       <image src='/images/person/about.png' class='col-list-item-icon'></image>
       <text class='col-list-item-title'>关于产品</text>
