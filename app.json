@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/person/person"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#17b4bb",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+		"selectedColor": "#17b4bb",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+				"iconPath": "images/tabbar/home_off.png",
+				"selectedIconPath": "images/tabbar/home_on.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "发现",
+				"iconPath": "images/tabbar/find_off.png",
+				"selectedIconPath": "images/tabbar/find_on.png"
+      },
+			{
+				"pagePath": "pages/person/person",
+				"text":"个人",
+				"iconPath": "images/tabbar/person_off.png",
+				"selectedIconPath": "images/tabbar/person_on.png"
+			}
+    ]
+  }
+}
