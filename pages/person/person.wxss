@@ -16,3 +16,33 @@
 	color: #fff;
 	font-size: .9rem;
 }
+.col-list {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: #707070;
+	font-size: .9rem;
+}
+.col-list-item {
+	display: flex;
+	width: 100%;
+	padding: 0 1rem;
+	align-items: center;
+	box-sizing: border-box;
+}
+.col-list-item>image {
+	width: 2rem;
+	height: 2rem;
+	flex: none;
+}
+.col-list-item-title {
+	line-height: 3.6rem;
+	flex: 1;
+	margin-left: .5rem;
+}
+.line {
+	height: 1rpx;
+	background: #aaa;
+	margin: 0 1rem;
+	transform: scaleY(.5);
+}

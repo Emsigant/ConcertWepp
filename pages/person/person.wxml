@@ -2,9 +2,20 @@
 
 
 <view class='person'>
-	<!-- header -->
-	<view class='header'>
-		<image class='user-avatar' src='/images/test/user.jpg' mode='aspectFill'></image>
-		<view class='user-nickname'>{{userInfo ? userInfo.nickName : '请登录'}}</view>
-	</view>
+  <!-- header -->
+  <view class='header'>
+    <image class='user-avatar' src='/images/test/user.jpg' mode='aspectFill'></image>
+    <view class='user-nickname'>{{userInfo ? userInfo.nickName : '请登录'}}</view>
+  </view>
+  <view class='col-list'>
+    <view class='col-list-item'>
+			<image src='/images/person/ticket.png'></image>
+			<view class='col-list-item-title'>我的票</view>
+			<image src='/images/index/right.png'></image>
+    </view>
+		<view class='line'></view>
+    <view class='col-list-item'>
+
+    </view>
+  </view>
 </view>
