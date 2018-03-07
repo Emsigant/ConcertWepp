@@ -1,31 +1,5 @@
 /**index.wxss**/
 
-.banner {
-  padding: 0 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.banner-title {
-  line-height: 2rem;
-  margin-bottom: 0.5rem;
-	font-size: 1.1rem;
-  color: #707070;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.banner-anchor {
-  color: #bfbfbf;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-}
-
-.banner-anchor>image {
-  width: 1rem;
-  height: 1rem;
-}
 
 .top-banner {
   padding: 1rem;
@@ -71,16 +45,7 @@
   margin-right: 0.3rem;
 }
 
-.row-banner {
-  display: flex;
-  padding: 0 1rem;
-}
 
-.col-banner {
-  display: flex;
-  padding: 0 1rem;
-  flex-direction: column;
-}
 
 .banner-item {
   flex: 1;

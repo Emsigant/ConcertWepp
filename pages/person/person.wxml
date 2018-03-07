@@ -1,4 +1,10 @@
 <!--pages/person/person.wxml-->
-<view>{{userInfo ? userInfo.nickName : '请登录'}}</view>
 
 
+<view class='person'>
+	<!-- header -->
+	<view class='header'>
+		<image class='user-avatar' src='/images/test/user.jpg' mode='aspectFill'></image>
+		<view class='user-nickname'>{{userInfo ? userInfo.nickName : '请登录'}}</view>
+	</view>
+</view>
