@@ -5,7 +5,8 @@ const app = getApp()
 const log = console.log
 Page({
 	data: {
-		defaultCity: '武汉',
+		defaultCity: '武汉市',
+		defaultLocation: ['湖北省', '武汉市','洪山区'],
 		bannerItemList: [
 			{ src: '/images/index/microphone.png', text: '演唱会' },
 			{ src: '/images/index/dance.png', text: '音乐剧' },
@@ -37,5 +38,15 @@ Page({
 	},
 	goToSearch() {
 		log('go to search')
+		wx.navigateTo({
+			url: '/pages/search/search',
+		})
+	},
+	bindRegionChange(e) {
+		log(e)
+		let v = e.detail.value
+		this.setData({
+			defaultLocation: [v.shift(), v.shift()]
+		})
 	}
 })

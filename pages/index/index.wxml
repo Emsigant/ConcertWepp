@@ -4,7 +4,9 @@
   <view class="top-banner">
     <view class="location" bindtap='chooseLocation'>
       <image class="location-icon" src="/images/index/location.png"></image>
-      <view>{{defaultCity}}</view>
+      <picker style='height:100rpx;' mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
+        <view>{{defaultLocation[1]}}</view>
+      </picker>
     </view>
     <view class="search-input" bindtap='goToSearch'>
       <image src='/images/index/search.png'></image>
@@ -38,51 +40,53 @@
   <view class='banner'>
     <view class='banner-title'>
       <text>演唱会</text>
-			<view class='banner-anchor'>
-			更多
-			<image src='/images/index/right.png'></image>
-			</view>
+      <view class='banner-anchor'>
+        更多
+        <image src='/images/index/right.png'></image>
+      </view>
     </view>
     <view class='col-3-grid'>
       <view wx:for='123456' class='col-3-grid-item'>
         <image src='/images/index/r3.jpg' mode='aspectFill'></image>
-				<view class='col-3-item-title'>if the title is very long</view>
+        <view class='col-3-item-title'>if the title is very long</view>
         <view class='col-3-item-info'>if the info is very long</view>
       </view>
     </view>
   </view>
-	<!-- list grid 2 -->
-	<view class='banner'>
+  <!-- list grid 2 -->
+  <view class='banner'>
     <view class='banner-title'>
       <text>音乐剧</text>
-			<view class='banner-anchor'>
-			更多
-			<image src='/images/index/right.png'></image>
-			</view>
+      <view class='banner-anchor'>
+        更多
+        <image src='/images/index/right.png'></image>
+      </view>
     </view>
     <view class='col-3-grid'>
       <view wx:for='123456' class='col-3-grid-item'>
         <image src='/images/index/r4.jpg' mode='aspectFill'></image>
-				<view class='col-3-item-title'>if the title is very long</view>
+        <view class='col-3-item-title'>if the title is very long</view>
         <view class='col-3-item-info'>if the info is very long</view>
       </view>
     </view>
   </view>
-	<!-- list grid 3 -->
-	<view class='banner'>
+  <!-- list grid 3 -->
+  <view class='banner'>
     <view class='banner-title'>
       <text>音乐会</text>
-			<view class='banner-anchor'>
-			更多
-			<image src='/images/index/right.png'></image>
-			</view>
+      <view class='banner-anchor'>
+        更多
+        <image src='/images/index/right.png'></image>
+      </view>
     </view>
     <view class='col-3-grid'>
       <view wx:for='123456' class='col-3-grid-item'>
         <image src='/images/index/r5.jpg' mode='aspectFill'></image>
-				<view class='col-3-item-title'>if the title is very long</view>
+        <view class='col-3-item-title'>if the title is very long</view>
         <view class='col-3-item-info'>if the info is very long</view>
       </view>
     </view>
   </view>
+
+
 </view>

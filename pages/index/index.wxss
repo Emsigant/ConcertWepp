@@ -16,6 +16,10 @@
   font-size: 0.9rem;
   color: #17b4bb;
 }
+picker {
+	display: flex;
+  align-items: center;
+}
 
 .location-icon {
   width: 1rem;
