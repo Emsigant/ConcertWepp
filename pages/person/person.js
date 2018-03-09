@@ -96,8 +96,10 @@ Page({
 	 * self defined event handlers
 	 */
 	tapListItem(e) {
-		console.log(e);
 		let ct = e.currentTarget;
-		console.log(ct)
+		console.log(ct.dataset)
+		wx.navigateTo({
+			url: '/pages/about/about?path=' + ct.dataset.targetPath
+		})
 	}
 })
