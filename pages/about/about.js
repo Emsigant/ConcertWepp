@@ -2,10 +2,10 @@
 const mapTable = {
 	'ticket': '我的票',
 	'order': '我的订单',
-	'people': '订票人',
+	'people': '购票人',
 	'collection': '我的收藏',
 	'about': '关于产品'
-}
+};
 
 Page({
 
@@ -13,7 +13,8 @@ Page({
    * 页面的初始数据
    */
 	data: {
-		msg: 'about'
+		msg: 'about',
+		currentPath: ''
 	},
 
   /**
@@ -25,7 +26,8 @@ Page({
 			title: mapTable[options.path]
 		})
 		this.setData({
-			msg: mapTable[options.path]
+			msg: mapTable[options.path],
+			currentPath: options.path
 		})
 	},
 
