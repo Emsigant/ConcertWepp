@@ -1,8 +1,10 @@
 //index.js
 //获取应用实例
 //app.globalData获取在app.js中定义的全局变量
-const app = getApp()
-const log = console.log
+const app = getApp();
+const log = console.log;
+const categoryUrl = '/pages/category/category';
+const searchUrl = '/pages/search/search';
 Page({
 	data: {
 		defaultCity: '武汉市',
@@ -33,20 +35,22 @@ Page({
 		log('choose location')
 	},
 	tapItem(e) {
-		let _ct = e.currentTarget
-		log('itemid: %d', _ct.dataset.itemid)
+		// console.log(e);
+		let _id = e.currentTarget.dataset.itemId;
+		wx.navigateTo({
+			url: categoryUrl + '?from=index&itemId=' + _id
+		});
 	},
 	goToSearch() {
 		log('go to search')
 		wx.navigateTo({
-			url: '/pages/search/search',
+			url: searchUrl + '?from=index'
 		})
 	},
 	bindRegionChange(e) {
-		log(e)
 		let v = e.detail.value
 		this.setData({
-			defaultLocation: [v.shift(), v.shift()]
+			defaultLocation: [v.shift(), v.shift(), v.shift()]
 		})
 	}
 })

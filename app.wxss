@@ -37,3 +37,12 @@
   padding: 0 1rem;
   flex-direction: column;
 }
+
+.line {
+	height: 1rpx;
+	flex: none;
+	background: #ccc;
+	margin: 0 1rem;
+	transform: scaleY(.5);
+  transform-origin:0 0;
+}

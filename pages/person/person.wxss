@@ -48,10 +48,3 @@
 }
 
 
-.line {
-	height: 1rpx;
-	background: #ccc;
-	margin: 0 1rem;
-	transform: scaleY(0.5);
-  transform-origin:0 0;
-}

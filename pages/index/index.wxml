@@ -4,7 +4,7 @@
   <view class="top-banner">
     <view class="location" bindtap='chooseLocation'>
       <image class="location-icon" src="/images/index/location.png"></image>
-      <picker style='height:100rpx;' mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
+      <picker mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
         <view>{{defaultLocation[1]}}</view>
       </picker>
     </view>
@@ -15,7 +15,7 @@
   </view>
   <!-- item banner -->
   <view class='row-banner'>
-    <view wx:for='{{bannerItemList}}' class='banner-item' data-itemid='{{index}}' bindtap='tapItem'>
+    <view wx:for='{{bannerItemList}}' class='banner-item' data-item-id='{{index}}' bindtap='tapItem'>
       <image src='{{item.src}}' class='item-image'></image>
       <text>{{item.text}}</text>
     </view>
@@ -40,8 +40,8 @@
   <view class='banner'>
     <view class='banner-title'>
       <text>演唱会</text>
-      <view class='banner-anchor'>
-        更多
+      <view class='banner-anchor' bindtap='tapItem' data-item-id='0'>
+        <text>更多</text>
         <image src='/images/index/right.png'></image>
       </view>
     </view>
@@ -57,7 +57,7 @@
   <view class='banner'>
     <view class='banner-title'>
       <text>音乐剧</text>
-      <view class='banner-anchor'>
+      <view class='banner-anchor' bindtap='tapItem' data-item-id='1'>
         更多
         <image src='/images/index/right.png'></image>
       </view>
@@ -65,8 +65,8 @@
     <view class='col-3-grid'>
       <view wx:for='123456' class='col-3-grid-item'>
         <image src='/images/index/r4.jpg' mode='aspectFill'></image>
-        <view class='col-3-item-title'>if the title is very long</view>
-        <view class='col-3-item-info'>if the info is very long</view>
+        <view class='col-3-item-title'>{{item}} if the title is very long</view>
+        <view class='col-3-item-info'>{{item}} if the info is very long</view>
       </view>
     </view>
   </view>
@@ -74,7 +74,7 @@
   <view class='banner'>
     <view class='banner-title'>
       <text>音乐会</text>
-      <view class='banner-anchor'>
+      <view class='banner-anchor' bindtap='tapItem' data-item-id='2'>
         更多
         <image src='/images/index/right.png'></image>
       </view>
@@ -82,11 +82,9 @@
     <view class='col-3-grid'>
       <view wx:for='123456' class='col-3-grid-item'>
         <image src='/images/index/r5.jpg' mode='aspectFill'></image>
-        <view class='col-3-item-title'>if the title is very long</view>
-        <view class='col-3-item-info'>if the info is very long</view>
+        <view class='col-3-item-title'>{{item}} if the title is very long</view>
+        <view class='col-3-item-info'>{{item}} if the info is very long</view>
       </view>
     </view>
   </view>
-
-
 </view>

@@ -1,0 +1,16 @@
+<!--pages/category/category.wxml-->
+<view>
+  <view class='col-list'>
+    <view wx:for='123567'>
+      <view class='col-list-item'>
+        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+        <view class='col-list-item-info'>
+          <view class='title'>what if the title is very long, even two rows and more</view>
+          <view class='time-location'>2018-05-01 武汉琴台大剧院</view>
+          <view class='price'>88-200</view>
+        </view>
+      </view>
+      <view class='line'></view>
+    </view>
+  </view>
+</view>
