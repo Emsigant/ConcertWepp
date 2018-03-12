@@ -2,12 +2,12 @@
 <view class="app">
   <!-- location & search -->
   <view class="top-banner">
-    <view class="location" bindtap='chooseLocation'>
-      <image class="location-icon" src="/images/index/location.png"></image>
-      <picker mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
+    <picker mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
+      <view class="location" bindtap='chooseLocation'>
+        <image class="location-icon" src="/images/index/location.png"></image>
         <view>{{defaultLocation[1]}}</view>
-      </picker>
-    </view>
+      </view>
+    </picker>
     <view class="search-input" bindtap='goToSearch'>
       <image src='/images/index/search.png'></image>
       <view>搜索</view>

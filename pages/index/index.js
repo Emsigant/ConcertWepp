@@ -8,7 +8,7 @@ const searchUrl = '/pages/search/search';
 Page({
 	data: {
 		defaultCity: '武汉市',
-		defaultLocation: ['湖北省', '武汉市','洪山区'],
+		defaultLocation: ['湖北省', '武汉市', '洪山区'],
 		bannerItemList: [
 			{ src: '/images/index/microphone.png', text: '演唱会' },
 			{ src: '/images/index/dance.png', text: '音乐剧' },
