@@ -1,0 +1,18 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <view class='header'>
+    <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+    <view class='info'>
+      <view class='title'>what if the title is very long, even two rows and more</view>
+      <view class='price'>200</view>
+    </view>
+  </view>
+  <view class='detail'>
+    <view class='line'></view>
+		<view class='detail-item'>2018-05-30</view>
+		<view class='line'></view>
+		<view class='detail-item'>武汉市华中科技大学</view>
+		<view class='line'></view>
+		<view class='detail-item'>门票：A区</view>
+  </view>
+</view>

@@ -10,6 +10,7 @@ const mapTable = {
 		text: '音乐会'
 	}
 }
+const detailUrl = '/pages/detail/detail'
 Page({
 
   /**
@@ -78,5 +79,14 @@ Page({
    */
 	onShareAppMessage: function () {
 
+	},
+	/**
+	 * 自定义事件
+	 */
+	goDetail(e) {
+		let _id = e.currentTarget.dataset.itemId
+		wx.navigateTo({
+			url: detailUrl + '?from=cat&id=' + _id
+		})
 	}
 })

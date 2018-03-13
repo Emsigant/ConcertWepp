@@ -1,0 +1,51 @@
+/* pages/detail/detail.wxss */
+
+.header {
+  width: 100%;
+  display: flex;
+  padding: 0 1rem;
+  margin: 1rem 0;
+	box-sizing: border-box;
+}
+
+.header>image {
+  height: 220rpx;
+  width: 160rpx;
+  flex: none;
+  border-radius: 8rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #707070;
+  line-height: 1.35rem;
+  font-size: 1.1rem;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: #17b4bb;
+  padding: 0.5rem 0;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item {
+  width: 100%;
+  padding: 0 1rem;
+  line-height: 3rem;
+  color: #a3a3a3;
+	box-sizing: border-box;
+}

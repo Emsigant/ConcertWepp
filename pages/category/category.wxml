@@ -1,8 +1,8 @@
 <!--pages/category/category.wxml-->
 <view>
   <view class='col-list'>
-    <view wx:for='123456789'>
-      <view class='col-list-item'>
+    <view wx:for='0123456789'>
+      <view class='col-list-item' bindtap='goDetail' data-item-id='{{index}}'>
         <image src='/images/index/r4.jpg' mode='aspectFill'></image>
         <view class='col-list-item-info'>
           <view class='title'>{{item}} what if the title is very long, even two rows and more</view>

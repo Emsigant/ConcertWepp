@@ -8,7 +8,9 @@
 	display: flex;
 	box-sizing: border-box;
 }
-
+.col-list-item:active {
+	background: #eee;
+}
 .col-list-item>image {
 	width: 160rpx;
 	height: 220rpx;
