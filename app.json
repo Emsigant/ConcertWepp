@@ -24,12 +24,6 @@
         "selectedIconPath": "images/tabbar/home_on.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "发现",
-        "iconPath": "images/tabbar/find_off.png",
-        "selectedIconPath": "images/tabbar/find_on.png"
-      },
-      {
         "pagePath": "pages/person/person",
         "text": "个人",
         "iconPath": "images/tabbar/person_off.png",

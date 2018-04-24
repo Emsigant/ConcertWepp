@@ -1,90 +1,89 @@
 <!--index.wxml-->
 <view class="app">
-  <!-- location & search -->
-  <view class="top-banner">
-    <picker mode='region' value='{{defaultLocation}}' bindchange='bindRegionChange'>
-      <view class="location" bindtap='chooseLocation'>
-        <image class="location-icon" src="/images/index/location.png"></image>
-        <view>{{defaultLocation[1]}}</view>
-      </view>
-    </picker>
-    <view class="search-input" bindtap='goToSearch'>
-      <image src='/images/index/search.png'></image>
-      <view>搜索</view>
+    <!-- location & search -->
+    <view class="top-banner">
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel='bindMultiPickerCancel'>
+            <view class="location">
+                <image class="location-icon" src="/images/index/location.png"></image>
+                <view>{{cityFetched ? map[oldPro].city[oldCity]:'获取中'}}</view>
+            </view>
+        </picker>
     </view>
-  </view>
-  <!-- item banner -->
-  <view class='row-banner'>
-    <view wx:for='{{bannerItemList}}' class='banner-item' data-item-id='{{index}}' bindtap='tapItem'>
-      <image src='{{item.src}}' class='item-image'></image>
-      <text>{{item.text}}</text>
+    <!-- item banner -->
+    <view class='row-banner'>
+        <view wx:for='{{bannerItemList}}' class='banner-item' data-path="{{cityFetched ? item.path:undefined}}" bindtap='bindTap' data-show-type-id="{{item.showTypeId}}" data-title='{{item.text}}' data-location='{{map[oldPro].province+"|"+map[oldPro].city[oldCity]}}'>
+            <image src='{{item.src}}' class='item-image'></image>
+            <text>{{item.text}}</text>
+        </view>
     </view>
-  </view>
-  <!-- recommendations -->
-  <view class='col-banner'>
-    <view class='col-2-row'>
-      <view wx:for='{{recommendationList.col2}}' class='col-2-item'>
-        <image src='{{item.src}}' mode='aspectFill'></image>
-        <text class='col-2-item-title'>{{item.title}}</text>
-      </view>
+    <!-- recommendations -->
+    <view class='col-banner'>
+        <!-- 3 col row -->
+        <view class='col-3-row'>
+            <view wx:for='{{recommendationList.col3}}' class='col-3-item' data-item-id='1' bindtap='goDetail'>
+                <image src='{{item.src}}' mode='aspectFill'></image>
+                <view class='col-3-item-title'>if the title is very long</view>
+                <view class='col-3-item-info'>if the info is very long</view>
+            </view>
+        </view>
+        <!-- 3 col row -->
+        <view class='col-3-row'>
+            <view wx:for='{{recommendationList.col3}}' class='col-3-item' data-item-id='1' bindtap='goDetail'>
+                <image src='{{item.src}}' mode='aspectFill'></image>
+                <view class='col-3-item-title'>if the title is very long</view>
+                <view class='col-3-item-info'>if the info is very long</view>
+            </view>
+        </view>
     </view>
-    <view class='col-3-row'>
-      <view wx:for='{{recommendationList.col3}}' class='col-3-item'>
-        <image src='{{item.src}}' mode='aspectFill'></image>
-        <view class='col-3-item-title'>if the title is very long</view>
-        <view class='col-3-item-info'>if the info is very long</view>
-      </view>
+    <!-- list grid 1 -->
+    <view class='banner'>
+        <view class='banner-title'>
+            <text>演唱会</text>
+            <view class='banner-anchor' bindtap='tapItem' data-item-id='0'>
+                <text>更多</text>
+                <image src='/images/index/right.png'></image>
+            </view>
+        </view>
+        <view class='col-3-grid'>
+            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
+                <image src='/images/index/r3.jpg' mode='aspectFill'></image>
+                <view class='col-3-item-title'>if the title is very long</view>
+                <view class='col-3-item-info'>if the info is very long</view>
+            </view>
+        </view>
     </view>
-  </view>
-  <!-- list grid 1 -->
-  <view class='banner'>
-    <view class='banner-title'>
-      <text>演唱会</text>
-      <view class='banner-anchor' bindtap='tapItem' data-item-id='0'>
-        <text>更多</text>
-        <image src='/images/index/right.png'></image>
-      </view>
+    <!-- list grid 2 -->
+    <view class='banner'>
+        <view class='banner-title'>
+            <text>音乐剧</text>
+            <view class='banner-anchor' bindtap='tapItem' data-item-id='1'>
+                更多
+                <image src='/images/index/right.png'></image>
+            </view>
+        </view>
+        <view class='col-3-grid'>
+            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
+                <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+                <view class='col-3-item-title'>{{item}} if the title is very long</view>
+                <view class='col-3-item-info'>{{item}} if the info is very long</view>
+            </view>
+        </view>
     </view>
-    <view class='col-3-grid'>
-      <view wx:for='123456' class='col-3-grid-item'>
-        <image src='/images/index/r3.jpg' mode='aspectFill'></image>
-        <view class='col-3-item-title'>if the title is very long</view>
-        <view class='col-3-item-info'>if the info is very long</view>
-      </view>
+    <!-- list grid 3 -->
+    <view class='banner'>
+        <view class='banner-title'>
+            <text>音乐会</text>
+            <view class='banner-anchor' bindtap='tapItem' data-item-id='2'>
+                更多
+                <image src='/images/index/right.png'></image>
+            </view>
+        </view>
+        <view class='col-3-grid'>
+            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
+                <image src='/images/index/r5.jpg' mode='aspectFill'></image>
+                <view class='col-3-item-title'>{{item}} if the title is very long</view>
+                <view class='col-3-item-info'>{{item}} if the info is very long</view>
+            </view>
+        </view>
     </view>
-  </view>
-  <!-- list grid 2 -->
-  <view class='banner'>
-    <view class='banner-title'>
-      <text>音乐剧</text>
-      <view class='banner-anchor' bindtap='tapItem' data-item-id='1'>
-        更多
-        <image src='/images/index/right.png'></image>
-      </view>
-    </view>
-    <view class='col-3-grid'>
-      <view wx:for='123456' class='col-3-grid-item'>
-        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
-        <view class='col-3-item-title'>{{item}} if the title is very long</view>
-        <view class='col-3-item-info'>{{item}} if the info is very long</view>
-      </view>
-    </view>
-  </view>
-  <!-- list grid 3 -->
-  <view class='banner'>
-    <view class='banner-title'>
-      <text>音乐会</text>
-      <view class='banner-anchor' bindtap='tapItem' data-item-id='2'>
-        更多
-        <image src='/images/index/right.png'></image>
-      </view>
-    </view>
-    <view class='col-3-grid'>
-      <view wx:for='123456' class='col-3-grid-item'>
-        <image src='/images/index/r5.jpg' mode='aspectFill'></image>
-        <view class='col-3-item-title'>{{item}} if the title is very long</view>
-        <view class='col-3-item-info'>{{item}} if the info is very long</view>
-      </view>
-    </view>
-  </view>
 </view>
