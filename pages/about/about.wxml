@@ -1,2 +1,2 @@
 <!--pages/about/about.wxml-->
-<view>{{msg}}</view>
+<view>about</view>

@@ -1,18 +1,44 @@
 <!--pages/detail/detail.wxml-->
-<view>
+<loading hidden='{{detailFetched}}'>正在加载...</loading>
+<view hidden='{{!detailFetched}}' style='margin-bottom:3rem'>
   <view class='header'>
     <image src='/images/index/r4.jpg' mode='aspectFill'></image>
     <view class='info'>
-      <view class='title'>what if the title is very long, even two rows and more</view>
-      <view class='price'>200</view>
+      <view class='title'>{{detailInfo.showName}}</view>
+      <view class='price'>{{detailInfo.pricePeriod}}</view>
     </view>
   </view>
   <view class='detail'>
     <view class='line'></view>
-		<view class='detail-item'>2018-05-30</view>
-		<view class='line'></view>
-		<view class='detail-item'>武汉市华中科技大学</view>
-		<view class='line'></view>
-		<view class='detail-item'>门票：A区</view>
+    <view class='detail-item'>开始时间：{{detailInfo.startTime}}</view>
+    <view class='line'></view>
+    <view class='detail-item'>演出地点：{{detailInfo.address}}</view>
+    <view class='line'></view>
+    <picker mode='selector' range='{{productTypeList}}' value='{{selectedProductIndex}}' bindchange="pickerChange">
+      <view class='detail-item'>
+        <view style='flex: 1'>门票类型：{{productFetched?productTypeList[selectedProductIndex]:'获取中...'}}</view>
+        <view class='banner-anchor'>
+          选择
+          <image src='/images/index/right.png'></image>
+        </view>
+      </view>
+    </picker>
+    <view class='line'></view>
   </view>
+  <view class='info'>
+    <view class='info-title'>简介</view>
+    <view class='info-content'>{{detailInfo.introduction}}</view>
+    <view class='info-title'>主要演员</view>
+    <view class='info-content'>{{detailInfo.showActor}}</view>
+    <view class='info-title'>购票须知</view>
+    <view class='info-content'>
+      1.凡演出票类商品，开票时间一般为演出前二到四周，正式开票后会第一时间短信通知您，请注意接收。
+    </view>
+    <view class='info-content'>
+      2.如您不是通过“选座购买”通道进行的票品购买，最终票品数量视项目主办方及场馆情况而定，正式开票后大麦网将根据用户付款先后顺序依次配票，可能存在票品不足不能为您配票的风险，如最终未能配票，大麦网承诺全额退款，但不承担其他损失。
+    </view>
+  </view>
+</view>
+<view class='buy-now' bindtap='buy'>
+  立即购买
 </view>

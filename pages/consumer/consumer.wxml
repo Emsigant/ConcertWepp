@@ -1,0 +1,23 @@
+<!--pages/consumer/consumer.wxml-->
+<loading hidden='{{dataFetched}}'>加载中...</loading>
+<view hidden='{{!dataFetched}}'>
+  <view hidden='{{userList.length !== 0}}' style='margin: 0 1rem'>暂无购票人信息</view>
+  <view>
+    <view class='user-list-wrapper'>
+      <view wx:for='{{userList}}'>
+        <view class='user'>
+          <view class='user-text'>
+            <view class='user-name'>{{item.name}}</view>
+            <view class='user-info'>
+              <view>{{item.phone}}</view>
+              <view>{{item.idCard}}</view>
+            </view>
+          </view>
+          <view class='user-edit' data-path='/pages/edit/edit' data-contact-id='{{item.contactId}}' bindtap='tap'>修改</view>
+        </view>
+        <view class='line'></view>
+      </view>
+    </view>
+  </view>
+  <button bindtap='tap' hover-class='hover-button' data-path='/pages/add/add'>添加购票人</button>
+</view>

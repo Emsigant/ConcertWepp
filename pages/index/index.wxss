@@ -112,14 +112,15 @@ picker {
 }
 
 .col-3-row {
-  display: flex;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   margin-bottom: 1.5rem;
 }
 
 .col-3-item {
-  flex: 1;
-  margin-right: 1rem;
+  color: #707070;
 }
 
 .col-3-item:last-child {

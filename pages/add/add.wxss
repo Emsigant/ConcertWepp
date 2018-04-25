@@ -1,0 +1,17 @@
+/* pages/add/add.wxss */
+
+.hover-button {
+  background: #199;
+}
+
+input {
+  border: 1px solid #a3a3a3;
+  margin: 1rem;
+  padding: 0.25rem .5rem;
+}
+
+button {
+  background: #17b4bb;
+  color: #fff;
+  margin: 1rem;
+}

@@ -1,12 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/person/person",
-    "pages/search/search",
     "pages/about/about",
     "pages/category/category",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/ticket/ticket",
+    "pages/order/order",
+    "pages/consumer/consumer",
+    "pages/add/add",
+    "pages/edit/edit",
+    "pages/buy/buy"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,0 @@
-<!--pages/search/search.wxml-->
-<view>
-
-<input focus='true' class='search-input' confirm-type='search'></input>
-
-</view>

@@ -1,0 +1,51 @@
+/* pages/consumer/consumer.wxss */
+
+button {
+  background: #17b4bb;
+  color: #fff;
+  margin: 1rem;
+}
+
+.user-list-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+}
+
+.user-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  color: #707070;
+  margin: 0.25rem 0;
+}
+
+.user-info {
+  display: flex;
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+.user-info>view {
+  margin: 0 1rem 0 0;
+}
+
+.user-edit {
+  flex: none;
+  align-items: center;
+  display: flex;
+  color: #17b4bb;
+}
+
+.hover-button {
+  background: #199;
+}

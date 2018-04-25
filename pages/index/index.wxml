@@ -1,89 +1,86 @@
 <!--index.wxml-->
-<view class="app">
-    <!-- location & search -->
-    <view class="top-banner">
-        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel='bindMultiPickerCancel'>
-            <view class="location">
-                <image class="location-icon" src="/images/index/location.png"></image>
-                <view>{{cityFetched ? map[oldPro].city[oldCity]:'获取中'}}</view>
-            </view>
-        </picker>
+<loading hidden='{{login}}'>登录中...</loading>
+<view class="app" hidden='{{!login}}'>
+  <!-- location & search -->
+  <view class="top-banner">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel='bindMultiPickerCancel'>
+      <view class="location">
+        <image class="location-icon" src="/images/index/location.png"></image>
+        <view>{{cityFetched ? map[oldPro].city[oldCity]:'获取中'}}</view>
+      </view>
+    </picker>
+  </view>
+  <!-- item banner -->
+  <view class='row-banner'>
+    <view wx:for='{{bannerItemList}}' class='banner-item' data-path="{{cityFetched ? item.path:item.path}}" bindtap='bindTap' data-show-type-id="{{item.showTypeId}}" data-title='{{item.text}}' data-location='{{location}}'>
+      <image src='{{item.src}}' class='item-image'></image>
+      <text>{{item.text}}</text>
     </view>
-    <!-- item banner -->
-    <view class='row-banner'>
-        <view wx:for='{{bannerItemList}}' class='banner-item' data-path="{{cityFetched ? item.path:undefined}}" bindtap='bindTap' data-show-type-id="{{item.showTypeId}}" data-title='{{item.text}}' data-location='{{map[oldPro].province+"|"+map[oldPro].city[oldCity]}}'>
-            <image src='{{item.src}}' class='item-image'></image>
-            <text>{{item.text}}</text>
-        </view>
+  </view>
+  <!-- recommendations -->
+  <view class='col-banner'>
+    <!-- 3 col row -->
+    <view class='col-3-row'>
+      <view hidden='{{topRecommendList.length !== 0}}'>暂无数据</view>
+      <view wx:for='{{topRecommendList}}' class='col-3-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
+        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+        <view class='col-3-item-title'>{{item.showName}}</view>
+        <view class='col-3-item-info'>{{item.introduction}}</view>
+      </view>
     </view>
-    <!-- recommendations -->
-    <view class='col-banner'>
-        <!-- 3 col row -->
-        <view class='col-3-row'>
-            <view wx:for='{{recommendationList.col3}}' class='col-3-item' data-item-id='1' bindtap='goDetail'>
-                <image src='{{item.src}}' mode='aspectFill'></image>
-                <view class='col-3-item-title'>if the title is very long</view>
-                <view class='col-3-item-info'>if the info is very long</view>
-            </view>
-        </view>
-        <!-- 3 col row -->
-        <view class='col-3-row'>
-            <view wx:for='{{recommendationList.col3}}' class='col-3-item' data-item-id='1' bindtap='goDetail'>
-                <image src='{{item.src}}' mode='aspectFill'></image>
-                <view class='col-3-item-title'>if the title is very long</view>
-                <view class='col-3-item-info'>if the info is very long</view>
-            </view>
-        </view>
+  </view>
+  <!-- list grid 1 -->
+  <view class='banner'>
+    <view class='banner-title'>
+      <text>演唱会</text>
+      <view class='banner-anchor' bindtap='bindTap' data-location='{{location}}' data-title='演唱会' data-path='/pages/category/category' data-show-type-id='STI0000000001'>
+        <text>更多</text>
+        <image src='/images/index/right.png'></image>
+      </view>
     </view>
-    <!-- list grid 1 -->
-    <view class='banner'>
-        <view class='banner-title'>
-            <text>演唱会</text>
-            <view class='banner-anchor' bindtap='tapItem' data-item-id='0'>
-                <text>更多</text>
-                <image src='/images/index/right.png'></image>
-            </view>
-        </view>
-        <view class='col-3-grid'>
-            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
-                <image src='/images/index/r3.jpg' mode='aspectFill'></image>
-                <view class='col-3-item-title'>if the title is very long</view>
-                <view class='col-3-item-info'>if the info is very long</view>
-            </view>
-        </view>
+    <view class='col-3-grid'>
+      <view hidden='{{recommentListType1.length !== 0}}'>暂无数据</view>
+      <view wx:for='{{recommentListType1}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
+        <image src='/images/index/r3.jpg' mode='aspectFill'></image>
+        <view class='col-3-item-title'>{{item.showName}}</view>
+        <view class='col-3-item-info'>{{item.introduction}}</view>
+      </view>
     </view>
-    <!-- list grid 2 -->
-    <view class='banner'>
-        <view class='banner-title'>
-            <text>音乐剧</text>
-            <view class='banner-anchor' bindtap='tapItem' data-item-id='1'>
-                更多
-                <image src='/images/index/right.png'></image>
-            </view>
-        </view>
-        <view class='col-3-grid'>
-            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
-                <image src='/images/index/r4.jpg' mode='aspectFill'></image>
-                <view class='col-3-item-title'>{{item}} if the title is very long</view>
-                <view class='col-3-item-info'>{{item}} if the info is very long</view>
-            </view>
-        </view>
+  </view>
+  <!-- list grid 2 -->
+  <view class='banner'>
+    <view class='banner-title'>
+      <text>音乐剧</text>
+      <view class='banner-anchor' bindtap='bindTap' data-location='{{location}}' data-title='音乐剧' data-path='/pages/category/category' data-show-type-id='STI0000000002'>
+        更多
+        <image src='/images/index/right.png'></image>
+      </view>
     </view>
-    <!-- list grid 3 -->
-    <view class='banner'>
-        <view class='banner-title'>
-            <text>音乐会</text>
-            <view class='banner-anchor' bindtap='tapItem' data-item-id='2'>
-                更多
-                <image src='/images/index/right.png'></image>
-            </view>
-        </view>
-        <view class='col-3-grid'>
-            <view wx:for='123456' class='col-3-grid-item' data-item-id='1' bindtap='goDetail'>
-                <image src='/images/index/r5.jpg' mode='aspectFill'></image>
-                <view class='col-3-item-title'>{{item}} if the title is very long</view>
-                <view class='col-3-item-info'>{{item}} if the info is very long</view>
-            </view>
-        </view>
+    <view class='col-3-grid'>
+      <view hidden='{{recommentListType2.length !== 0}}'>暂无数据</view>
+      <view wx:for='{{recommentListType2}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
+        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+        <view class='col-3-item-title'>{{item.showName}}</view>
+        <view class='col-3-item-info'>{{item.introduction}}</view>
+      </view>
     </view>
+  </view>
+  <!-- list grid 3 -->
+  <view class='banner'>
+    <view class='banner-title'>
+      <text>音乐会</text>
+      <view class='banner-anchor' bindtap='bindTap' data-location='{{location}}' data-title='音乐会' data-path='/pages/category/category' data-show-type-id='STI0000000003'>
+        更多
+        <image src='/images/index/right.png'></image>
+      </view>
+    </view>
+    <view class='col-3-grid'>
+      <view hidden='{{recommentListType3.length !== 0}}'>暂无数据</view>
+      <view wx:for='{{recommentListType3}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
+        <image src='/images/index/r5.jpg' mode='aspectFill'></image>
+        <view class='col-3-item-title'>{{item.showName}}</view>
+        <view class='col-3-item-info'>{{item.introduction}}</view>
+      </view>
+    </view>
+  </view>
 </view>

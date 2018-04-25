@@ -1,0 +1,7 @@
+<!--pages/edit/edit.wxml-->
+<view>
+  <input value='{{oldName}}' bindinput='input' data-t='1'></input>
+  <input value='{{oldPhone}}' bindinput='input' data-t='2'></input>
+  <input value='{{oldId}}' bindinput='input' data-t='3'></input>
+  <button hover-class='hover-button' bindtap='tap'>确认修改</button>
+</view>
