@@ -78,25 +78,10 @@ Page({
       { src: cimg2, text: '音乐剧', path: categoryUrl, showTypeId: "STI0000000002", },
       { src: cimg3, text: '音乐会', path: categoryUrl, showTypeId: "STI0000000003", },
     ],
-    recommendationList: {
-      col2: [
-        { src: '/images/index/r1.jpg', title: 'title1' },
-        { src: '/images/index/r2.jpg', title: 'title2' }
-      ],
-      col3: [
-        { src: '/images/index/r3.jpg', title: 'title3' },
-        { src: '/images/index/r4.jpg', title: 'title4' },
-        { src: '/images/index/r5.jpg', title: 'title5' }
-      ]
-    },
     multiArray: [[], []],
     multiIndex: [0, 0],
-    mapLocationToProvinceCity: {
-
-    },
-    map: [
-
-    ],
+    mapLocationToProvinceCity: {},
+    map: [],
     cityFetched: false,
     oldPro: 0,
     oldCity: 0,

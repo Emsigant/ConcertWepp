@@ -6,10 +6,16 @@
   background: #199;
 }
 
+.input-wrapper {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+}
+
 input {
   border: 1px solid #a3a3a3;
-  margin: 1rem;
   padding: 0.25rem 0.5rem;
+  flex: 1;
 }
 
 button {

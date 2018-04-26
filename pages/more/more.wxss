@@ -1,0 +1,16 @@
+/* pages/more/more.wxss */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: #707070;
+}
+
+.list-item {
+  margin: 0.25rem 0;
+}
+
+.key {
+  color: #17b4bb;
+}

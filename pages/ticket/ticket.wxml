@@ -1,2 +1,17 @@
 <!--pages/ticket/ticket.wxml-->
-<text>pages/ticket/ticket.wxml</text>
+<loading hidden='{{fetched}}'>正在加载...</loading>
+<view hidden='{{!fetched}}'>
+  <view hidden='{{dataList.length !== 0}}' style='margin:1rem;'>暂无数据</view>
+  <view class='ticket-list'>
+    <view wx:for='{{dataList}}'>
+      <view class='ticket' data-path='/pages/more/more' data-order-id='{{item.orderId}}' bindtap='tap'>
+        <view class='ticket-text'>
+          <view class='ticket-text-title'>{{item.showName}}</view>
+          <view class='ticket-text-time'>{{item.startTime}}/{{item.theaterName}}/{{item.showAreaName}}</view>
+          <view class='ticket-text-status'>{{item.status}}</view>
+        </view>
+      </view>
+      <view class='line'></view>
+    </view>
+  </view>
+</view>

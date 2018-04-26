@@ -1,0 +1,17 @@
+<!--pages/more/more.wxml-->
+<loading hidden='{{ready}}'>加载中</loading>
+<view hidden='{{!ready}}' class='list'>
+  <view class='list-item'>
+    <text class='key'>演出名称：</text>{{info.showName}}</view>
+  <view class='list-item'>
+    <text class='key'>剧院名称：</text>{{info.theaterName}}</view>
+  <view class='list-item'>
+    <text class='key'>开始时间：</text>{{info.startTime}}</view>
+  <view class='list-item'>
+    <text class='key'>单张票价：</text>￥{{info.unitPrice / 100}}</view>
+  <view class='list-item'>
+    <text class='key'>门票数目：</text>{{info.productCount}}</view>
+  <view class='list-item'>
+    <text class='key'>门票类型：</text>{{info.showAreaName}}</view>
+  <view class='list-item key'>{{info.status}}</view>
+</view>

@@ -1,7 +1,16 @@
 <!--pages/edit/edit.wxml-->
 <view>
-  <input value='{{oldName}}' bindinput='input' data-t='1'></input>
-  <input value='{{oldPhone}}' bindinput='input' data-t='2'></input>
-  <input value='{{oldId}}' bindinput='input' data-t='3'></input>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>姓名</view>
+    <input value='{{oldName}}' bindinput='input' data-t='1'></input>
+  </view>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>手机</view>
+    <input value='{{oldPhone}}' bindinput='input' data-t='2' type='number'></input>
+  </view>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>身份证</view>
+    <input value='{{oldId}}' bindinput='input' data-t='3' type='number'></input>
+  </view>
   <button hover-class='hover-button' bindtap='tap'>确认修改</button>
 </view>

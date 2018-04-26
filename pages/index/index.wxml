@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<loading hidden='{{login}}'>登录中...</loading>
+<loading hidden='{{login}}'>登录中</loading>
 <view class="app" hidden='{{!login}}'>
   <!-- location & search -->
   <view class="top-banner">
@@ -23,7 +23,7 @@
     <view class='col-3-row'>
       <view hidden='{{topRecommendList.length !== 0}}'>暂无数据</view>
       <view wx:for='{{topRecommendList}}' class='col-3-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
-        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+        <image src='{{item.showCoverUrl}}' mode='aspectFill'></image>
         <view class='col-3-item-title'>{{item.showName}}</view>
         <view class='col-3-item-info'>{{item.introduction}}</view>
       </view>
@@ -41,7 +41,7 @@
     <view class='col-3-grid'>
       <view hidden='{{recommentListType1.length !== 0}}'>暂无数据</view>
       <view wx:for='{{recommentListType1}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
-        <image src='/images/index/r3.jpg' mode='aspectFill'></image>
+        <image src='{{item.showCoverUrl}}' mode='aspectFill'></image>
         <view class='col-3-item-title'>{{item.showName}}</view>
         <view class='col-3-item-info'>{{item.introduction}}</view>
       </view>
@@ -59,7 +59,7 @@
     <view class='col-3-grid'>
       <view hidden='{{recommentListType2.length !== 0}}'>暂无数据</view>
       <view wx:for='{{recommentListType2}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
-        <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+        <image src='{{item.showCoverUrl}}' mode='aspectFill'></image>
         <view class='col-3-item-title'>{{item.showName}}</view>
         <view class='col-3-item-info'>{{item.introduction}}</view>
       </view>
@@ -77,7 +77,7 @@
     <view class='col-3-grid'>
       <view hidden='{{recommentListType3.length !== 0}}'>暂无数据</view>
       <view wx:for='{{recommentListType3}}' class='col-3-grid-item' data-show-id='{{item.showId}}' data-path='/pages/detail/detail' bindtap='bindTap'>
-        <image src='/images/index/r5.jpg' mode='aspectFill'></image>
+        <image src='{{item.showCoverUrl}}' mode='aspectFill'></image>
         <view class='col-3-item-title'>{{item.showName}}</view>
         <view class='col-3-item-info'>{{item.introduction}}</view>
       </view>

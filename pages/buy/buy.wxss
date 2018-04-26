@@ -1,1 +1,88 @@
 /* pages/buy/buy.wxss */
+.basic-show-info {
+  color: #707070;
+  padding: 1rem;
+}
+.user-list-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+}
+
+.user-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  color: #707070;
+  margin: 0.25rem 0;
+}
+
+.user-info {
+  display: flex;
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+.user-info>view {
+  margin: 0 1rem 0 0;
+}
+.user-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-deal {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right:0;
+  height: 3rem;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #17b4bb;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #17b4bb;
+}
+.deal {
+  background: #17b4bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex: 1;
+}
+
+button {
+  background: #17b4bb;
+  color: #fff;
+  margin: 1rem;
+}
+.hover-button {
+  background: #199;
+}
+.key {
+  color: #17b4bb;
+}

@@ -1,2 +1,5 @@
 <!--pages/about/about.wxml-->
-<view>about</view>
+<view class='v1'>
+  <view>音乐会售票系统</view>
+  <view>V1.0</view>
+</view>

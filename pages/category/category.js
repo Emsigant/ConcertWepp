@@ -1,6 +1,7 @@
 // pages/category/category.js
-const requestBaseIp = 'http://222.20.31.188:8080';
+import { requestBaseIp } from '../../utils/util.js';
 const detailUrl = '/pages/detail/detail';
+
 Page({
 
 	/**

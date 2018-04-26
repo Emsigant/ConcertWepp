@@ -64,6 +64,11 @@ const checkSession = (el) => {
                           if (registres.data.code === '1') {
                             wx.setStorageSync('nickName', registres.data.content.nickName);
                             wx.setStorageSync('headerImageUrl', registres.data.content.headerImageUrl);
+                            if (el) {
+                              el.setData({
+                                login: true,
+                              })
+                            }
                           }
                         },
                       })

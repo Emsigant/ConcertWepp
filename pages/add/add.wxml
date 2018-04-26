@@ -1,7 +1,16 @@
 <!--pages/add/add.wxml-->
 <view>
-  <input placeholder='姓名' bindinput='input' data-t='1'></input>
-  <input placeholder='电话号码' bindinput='input' data-t='2'></input>
-  <input placeholder='身份证' bindinput='input' data-t='3'></input>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>姓名</view>
+    <input bindinput='input' data-t='1' placeholder='姓名'></input>
+  </view>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>手机</view>
+    <input bindinput='input' data-t='2' type='number' placeholder='手机'></input>
+  </view>
+  <view class='input-wrapper'>
+    <view style='width: 4rem'>身份证</view>
+    <input bindinput='input' data-t='3' type='number' placeholder='身份证'></input>
+  </view>
   <button hover-class='hover-button' bindtap='tap'>确认添加</button>
 </view>

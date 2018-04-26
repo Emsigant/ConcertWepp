@@ -1,1 +1,11 @@
 /* pages/about/about.wxss */
+.v1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(to bottom, #17b4bb, #fff);
+}

@@ -16,6 +16,8 @@ Page({
     showId: '',
     productId: '',
     showName: '',
+    startTime: '',
+    showAreaName: '',
     price: 0,
   },
 
@@ -45,6 +47,7 @@ Page({
               },
               detailFetched: true,
               showName: data.content.showName,
+              startTime: formatTime(data.content.startTime),
             })
           }
         }
@@ -65,6 +68,7 @@ Page({
               productDataList: data.content.dataList,
               productId: data.content.dataList[0].productId,
               price: data.content.dataList[0].price,
+              showAreaName: data.content.dataList[0].showAreaName,
             })
           }
         }
@@ -127,10 +131,13 @@ Page({
         selectedProductIndex: +e.detail.value,
         productId: this.data.productDataList[+e.detail.value].productId,
         price: this.data.productDataList[+e.detail.value].price,
+        showAreaName: this.data.productDataList[+e.detail.value].showAreaName,
       })
     }
   },
   buy(e) {
-
-  },
+    wx.navigateTo({
+      url: '/pages/buy/buy?productId=' + this.data.productId + '&price=' + this.data.price + "&showAreaName=" + this.data.showAreaName + '&startTime=' + this.data.startTime + '&showName=' + this.data.showName,
+    });
+  }
 })

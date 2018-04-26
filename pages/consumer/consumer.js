@@ -26,7 +26,6 @@ Page({
       },
       method: 'POST',
       success: (resp) => {
-        console.log(resp);
         if (resp.data.code === '1') {
           this.setData({
             dataFetched: true,
@@ -58,7 +57,6 @@ Page({
       },
       method: 'POST',
       success: (resp) => {
-        console.log(resp);
         if (resp.data.code === '1') {
           this.setData({
             dataFetched: true,

@@ -5,7 +5,7 @@
     <view hidden='{{!dataFetched}}'>
       <view wx:for='{{dataList}}'>
         <view class='col-list-item' bindtap='goDetail' data-show-id='{{item.showId}}' data-path='/pages/detail/detail'>
-          <image src='/images/index/r4.jpg' mode='aspectFill'></image>
+          <image src='{{item.showCoverUrl}}' mode='aspectFill'></image>
           <view class='col-list-item-info'>
             <view class='title'>{{item.showName}}</view>
             <view class='time-location'>{{item.startTime}} {{item.theaterName}}</view>
@@ -15,6 +15,5 @@
         <view class='line'></view>
       </view>
     </view>
-
   </view>
 </view>

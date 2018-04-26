@@ -1,5 +1,7 @@
 /* pages/detail/detail.wxss */
-
+.key {
+  color: #17b4bb;
+}
 .header {
   width: 100%;
   display: flex;
@@ -22,11 +24,6 @@
 }
 
 .title {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  color: #707070;
   line-height: 1.35rem;
   font-size: 1.1rem;
 }
@@ -44,9 +41,8 @@
 
 .detail-item {
   width: 100%;
-  padding: 0 1rem;
+  padding: .8rem 1rem;
   font-size: 0.9rem;
-  line-height: 2.7rem;
   color: #a3a3a3;
 	box-sizing: border-box;
   display: flex;

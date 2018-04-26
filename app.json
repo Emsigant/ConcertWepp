@@ -10,7 +10,8 @@
     "pages/consumer/consumer",
     "pages/add/add",
     "pages/edit/edit",
-    "pages/buy/buy"
+    "pages/buy/buy",
+    "pages/more/more"
   ],
   "window": {
     "backgroundTextStyle": "light",

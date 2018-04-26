@@ -134,9 +134,17 @@ Page({
           cookie: getCookie(),
         },
         success: (resp) => {
-          wx.navigateBack({
-            delta: 1,
-          })
+          if(resp.data.code === '1') {
+            wx.navigateBack({
+              delta: 1,
+            })
+          } else if(resp.data.code === '0'){
+            wx.showToast({
+              title: '数据格式不正确',
+              image:'/images/error.png',
+              duration: 1000,
+            })
+          }
         }
       })
     }

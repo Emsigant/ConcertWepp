@@ -1,3 +1,47 @@
 <!--pages/buy/buy.wxml-->
-<view>
+<view style='margin-top: 1rem;margin-bottom: 4rem;'>
+
+  <text style='margin: 1rem;'>演出信息</text>
+  <view class='basic-show-info'>
+    <view><text class='key'>演出名称：</text>{{showName}}</view>
+    <view><text class='key'>开始时间：</text>{{startTime}}</view>
+    <view><text class='key'>已选门票：</text>{{showAreaName}}(￥{{price/100}})</view>
+  </view>
+
+  <view hidden='{{userFetched}}'>获取购票人信息中</view>
+  <view hidden='{{!userFetched}}'>
+    <text style='margin-left: 1rem;'>购票人列表</text>
+    <view hidden='{{userList.length !== 0}}'>
+      <text style='margin-left: 1rem;'>暂无购票人信息，请添加</text>
+    </view>
+    <checkbox-group bindchange='checkbox'>
+      <view>
+        <view class='user-list-wrapper'>
+          <view wx:for='{{userList}}'>
+            <view class='user'>
+              <view class='user-text'>
+                <view class='user-name'>{{item.name}}</view>
+                <view class='user-info'>
+                  <view>{{item.phone}}</view>
+                  <view>{{item.idCard}}</view>
+                </view>
+              </view>
+              <view class='user-add'>
+                <checkbox checked='{{index === 0}}' value='{{index}}'></checkbox>
+              </view>
+            </view>
+            <view class='line'></view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+    <button hover-class='hover-button' bindtap='addBuyUser'>添加购票人</button>
+  </view>
+
+</view>
+<view class='submit-deal'>
+  <view class='bottom'>
+    <view class='price'>￥{{price / 100 * buyUserList.length}}</view>
+    <view class='deal' bindtap='deal'>立即支付</view>
+  </view>
 </view>
